@@ -60,21 +60,32 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="PlaceHolderMain" runat="server">
-    <table border="0" width="100%" cellspacing="0" cellpadding="0" class="ms-descriptiontext">
-        <wssuc:InputFormSection runat="server">
+    <table border="0" width="100%" cellspacing="0" cellpadding="10" class="ms-descriptiontext">
+        <tr>
+            <td>
+        <%--<wssuc:InputFormSection runat="server">
             <template_inputformcontrols>
 		    <wssuc:InputFormControl runat="server" LabelText="">
-			    <Template_Control>
+			    <Template_Control>--%>
 			        <asp:Label ID="localizedMsg" runat="server" Text="<% $Resources: FBAPackWebPages, DeleteConfirmLabelText %>" Visible="false"></asp:Label>
 			        <asp:Label ID="deleteMsg" runat="server" Text=""></asp:Label>
-			    </Template_Control>
+			 <%--   </Template_Control>
 		    </wssuc:InputFormControl>
 	    </template_inputformcontrols>
-        </wssuc:InputFormSection>
-        <wssuc:ButtonSection runat="server">
-            <template_buttons>
+        </wssuc:InputFormSection>--%>
+                </td>
+            </tr>
+          <tr>
+            <td>
+      <%--  <wssuc:ButtonSection runat="server">
+            <template_buttons>--%>
+
 		<asp:Button UseSubmitBehavior="false" runat="server" class="ms-ButtonHeightWidth" OnClick="OnDelete" OnClientClick="if (!confirmDelete()) return false;" Text="<% $Resources: FBAPackWebPages, DeleteButtonText %>" id="BtnDelete" accesskey="D"/>
-		</template_buttons>
-        </wssuc:ButtonSection>
+        <asp:Button UseSubmitBehavior="false" runat="server" class="ms-ButtonHeightWidth" OnClick="Button1_Click"  Text="Cancel" id="btnCancel" accesskey="D"/>
+               <%--<SharePoint:GoBackButton   runat="server"/>--%>
+		<%--</template_buttons>
+        </wssuc:ButtonSection>--%>
+                  </td>
+            </tr>
     </table>
 </asp:Content>

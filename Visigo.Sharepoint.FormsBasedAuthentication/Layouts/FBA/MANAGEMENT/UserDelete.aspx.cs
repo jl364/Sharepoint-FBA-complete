@@ -77,5 +77,21 @@ namespace Visigo.Sharepoint.FormsBasedAuthentication
             SPUtility.Redirect(url, SPRedirectFlags.Default, this.Context);
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            //Redirect to UsersDisp or Source, as long as source is not UserEdit.aspx - as that will no longer work as the user is deleted
+            string url = "FBA/Management/UsersDisp.aspx";
+
+            SPUtility.DetermineRedirectUrl(url, SPRedirectFlags.RelativeToLayoutsPage | SPRedirectFlags.UseSource, this.Context, null, out url);
+
+            if (url.ToLower().Contains("useredit.aspx"))
+            {
+                url = "FBA/Management/UsersDisp.aspx";
+
+                SPUtility.DetermineRedirectUrl(url, SPRedirectFlags.RelativeToLayoutsPage, this.Context, null, out url);
+            }
+
+            SPUtility.Redirect(url, SPRedirectFlags.Default, this.Context);
+        }
     }
 }

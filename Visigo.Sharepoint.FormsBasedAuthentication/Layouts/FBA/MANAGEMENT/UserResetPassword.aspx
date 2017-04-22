@@ -91,10 +91,16 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="PlaceHolderMain" runat="server">
-    <table border="0" width="100%" cellspacing="0" cellpadding="0" class="ms-descriptiontext">
-        <wssuc:InputFormSection runat="server" >
-            <Template_InputFormControls>
+    <table border="0" width="17%" cellspacing="0" cellpadding="0" class="ms-descriptiontext">
+       <%-- <wssuc:InputFormSection runat="server" >
+            <Template_InputFormControls>--%>
+        <tr>
+            <td colspan="4">
             <asp:Label ID="resetPasswordMsg" runat="server" Text=""></asp:Label>
+                </td>
+              </tr>
+           <tr>
+            <td>
 			<SharePoint:InputFormRadioButton id="resetAutoPassword"
 				GroupName="resetPassword"
 				runat="server"
@@ -125,12 +131,18 @@
 		                </wssuc:InputFormControl>
 					</table>
 			</SharePoint:InputFormRadioButton>
-	   </Template_InputFormControls>
-        </wssuc:InputFormSection>
+              </td> 
+               </tr>
+	 <%--  </Template_InputFormControls>
+        </wssuc:InputFormSection>--%>
+        <tr>
+            <td colspan="4">
         <wssuc:ButtonSection runat="server">
             <template_buttons>
 		<asp:Button UseSubmitBehavior="false" runat="server" class="ms-ButtonHeightWidth" OnClick="OnResetPassword" OnClientClick="if (!confirmResetPassword()) return false;" Text="<% $Resources: FBAPackWebPages, ResetPasswordButtonText %>" id="BtnResetPassword" accesskey="R"/>
 		</template_buttons>
         </wssuc:ButtonSection>
+             </td>
+            </tr>
     </table>
 </asp:Content>

@@ -27,7 +27,7 @@ namespace Visigo.Sharepoint.FormsBasedAuthentication
             bool _showRoles = (new MembershipSettings(SPContext.Current.Web)).EnableRoles;
 
             ReqValEmailSubject.Enabled = emailUser.Checked;
-            txtEmailBody.Text = "You have beed added to the CMIT Solutions Vault Home Site." + Environment.NewLine + "URL to login to site : " + SPContext.Current.Web.Url + Environment.NewLine;
+            txtEmailBody.Text = "You have been added to the CMIT Solutions Vault Home Site." + Environment.NewLine + "URL to login to site : " + SPContext.Current.Web.Url + Environment.NewLine;
 
             if (!Page.IsPostBack)
             {
@@ -53,6 +53,7 @@ namespace Visigo.Sharepoint.FormsBasedAuthentication
                         groupList.DataSource = this.Web.SiteGroups;
                         groupList.DataBind();
                     }
+                    txtDatofProvisionaing.SelectedDate = DateTime.Now.Date;
 
                     // Display Question and answer if required by provider
                     if (Utils.BaseMembershipProvider().RequiresQuestionAndAnswer)

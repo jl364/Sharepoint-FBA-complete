@@ -53,11 +53,15 @@
     
     <table border="0" width="96%" cellspacing="0" style="display:inline-block" cellpadding="10" class="ms-descriptiontext">
         <tr>
+       <%--  <wssuc:InputFormSection runat="server">
+            <template_inputformcontrols>--%>
             <td style="width:17%">
                 <asp:Label ID="Label1" runat="server" Text="<%$ Resources:FBAPackWebPages, TypeEmailAddrLabelText %>"></asp:Label>
             </td>
             <td style="width:34%">
                 <asp:Label ID="lblEmailMessage" runat="server" Text="" ForeColor="red"></asp:Label>
+		        <%--<wssuc:InputFormControl runat="server" LabelText="<%$ Resources:FBAPackWebPages, TypeEmailAddrLabelText %>">--%>
+			   <%--     <Template_Control>--%>
 			        <SharePoint:InputFormTextBox Title="<%$ Resources:FBAPackWebPages, EmailColHeaderText %>" class="ms-input" Columns="40" maxlength="255" ID="txtEmail" Direction="LeftToRight" Runat="server" autocomplete="off" />
 			        <SharePoint:InputFormRegularExpressionValidator ID="InputFormRegExpressionFieldValidator1"  ControlToValidate="txtEmail" Display="Dynamic" runat="server" ValidationExpression=".+\@.+" ErrorMessage="Enter a valid email address."/>
                      <SharePoint:InputFormRequiredFieldValidator ID="InputFormRequiredFieldValidator1" ControlToValidate="txtEmail" Display="Dynamic" Runat="server"/>	
@@ -68,6 +72,28 @@
 				        <SharePoint:InputFormCheckBoxList ID="groupList" CssClass="ms-RadioText" ToolTip="<%$ Resources:FBAPackWebPages, GroupToolTipText %>" runat="server" />
              </td>
             </tr>
+			       <%-- </Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+        <!-- User Name -->
+       <%-- <wssuc:InputFormSection runat="server" Title="<%$ Resources:FBAPackWebPages, UserNameColHeaderText %>">
+            <template_inputformcontrols>
+                <asp:Label ID="lblMessage" runat="server" Text="" ForeColor="red"></asp:Label>
+		        <wssuc:InputFormControl runat="server" LabelText="<%$ Resources:FBAPackWebPages, TypeUserNameLabelText %>">
+			        <Template_Control>
+			            
+			            <SharePoint:InputFormTextBox Title="<%$ Resources:FBAPackWebPages, UserNameColHeaderText %>" class="ms-input" Columns="40" maxlength="255" ID="txtUsername" Direction="LeftToRight" Runat="server" autocomplete="off" />
+			            <SharePoint:InputFormRequiredFieldValidator ID="InputFormRequiredFieldValidator1" ControlToValidate="txtUsername" Display="Dynamic" Runat="server"/>			            
+			        </Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+        <!-- Full Name -->
+<%--        <wssuc:InputFormSection runat="server">
+            <template_inputformcontrols>
+		        <wssuc:InputFormControl runat="server" LabelText="<%$ Resources:FBAPackWebPages, TypeFullNameLabelText %>">
+			        <Template_Control>--%>
          <tr>
             <td>
                 <asp:Label ID="Label2" runat="server" Text="<%$ Resources:FBAPackWebPages, TypeFullNameLabelText %>"></asp:Label>
@@ -76,6 +102,18 @@
 			            <SharePoint:InputFormTextBox Title="<%$ Resources:FBAPackWebPages, FullNameColHeaderText %>" class="ms-input" Columns="40" maxlength="255" ID="txtFullName" Direction="LeftToRight" Runat="server" autocomplete="off" />
 			            <SharePoint:InputFormRequiredFieldValidator ID="InputFormRequiredFieldValidator2" ControlToValidate="txtFullName" Display="Dynamic" Runat="server"/>
                 </td>
+
+        <%-- </tr>--%>
+			     <%--   </Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+        <!-- Password -->
+       <%-- <wssuc:InputFormSection runat="server">
+            <template_inputformcontrols>
+                <asp:Label ID="lblPasswordMessage" runat="server" Text="" ForeColor="red"></asp:Label>
+		        <wssuc:InputFormControl runat="server" LabelText="<%$ Resources:FBAPackWebPages, ConfirmPasswordLabelText %>">
+			        <Template_Control>--%>
          <tr>
             <td>
                 <asp:Label ID="Label3" runat="server" Text="Enter Password"></asp:Label>
@@ -98,6 +136,17 @@
 			            <SharePoint:InputFormCompareValidator ID="InputFormCompareValidatorPassword" SetFocusOnError="true"  ControlToValidate="txtConfirm" ControlToCompare="txtPassword" Type="String" Display="Dynamic" Operator="Equal" ErrorMessage="Password and confirmation do not match." runat="server"/>
                  </td>
              </tr>
+			      <%--  </Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+
+        
+         <%--<wssuc:InputFormSection runat="server" >
+            <template_inputformcontrols>
+		        <wssuc:InputFormControl runat="server" LabelText="Type user's CMIT Location">
+			        <Template_Control>--%>
+                              <%-- <br>--%>
           <tr>
             <td>
                 <asp:Label ID="Label5" runat="server" Text="Type user's CMIT Location"></asp:Label>
@@ -107,6 +156,15 @@
 			            <SharePoint:InputFormRequiredFieldValidator ID="InputFormRequiredFieldValidator5" ControlToValidate="txtCMITLocation" Display="Dynamic" Runat="server"/>
                 </td>
              </tr>
+			        <%--</Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+
+         <%--<wssuc:InputFormSection runat="server" >
+            <template_inputformcontrols>
+		        <wssuc:InputFormControl runat="server" LabelText="Type user's Telephone Number">
+			        <Template_Control>--%>
           <tr>
             <td>
                 <asp:Label ID="Label6" runat="server" Text="Type user's Telephone Number"></asp:Label>
@@ -118,6 +176,15 @@
                 </td>
              </tr>
 			     
+<%--			        </Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+
+         <%-- <wssuc:InputFormSection runat="server" >
+            <template_inputformcontrols>
+		        <wssuc:InputFormControl runat="server" LabelText="Type user's Title">
+			        <Template_Control>--%>
          <tr>
             <td>
                 <asp:Label ID="Label7" runat="server" Text="Type user's Title"></asp:Label>
@@ -127,7 +194,15 @@
 			            <SharePoint:InputFormRequiredFieldValidator ID="InputFormRequiredFieldValidator7" ControlToValidate="txtTitle" Display="Dynamic" Runat="server"/>
                 </td>
              </tr>
-			    
+			       <%-- </Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+
+         <%-- <wssuc:InputFormSection runat="server" >
+            <template_inputformcontrols>
+		        <wssuc:InputFormControl runat="server" LabelText="Type user's Date of Provisioning">
+			        <Template_Control>--%>
           <tr>
             <td>
                 <asp:Label ID="Label8" runat="server" Text="Type Date of Provisioning"></asp:Label>
@@ -136,7 +211,10 @@
                        <SharePoint:DateTimeControl ID="txtDatofProvisionaing" runat="server" IsRequiredField="true"  DateOnly="true" />
                  </td>
              </tr>
-			       
+			       <%-- </Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
 
         <!-- Security Question -->
         <tr id="QuestionSection" runat="server">
@@ -144,13 +222,26 @@
                 <asp:Label ID="Label9" runat="server" Text="<%$ Resources:FBAPackWebPages, TypeSecurityQLableText %>"></asp:Label>
             </td>
             <td>
-      
+        <%--<wssuc:InputFormSection id="QuestionSection" runat="server" >
+            <template_inputformcontrols>
+                <asp:Label ID="lblQuestionMessage" runat="server" Text="" ForeColor="red"></asp:Label>
+		        <wssuc:InputFormControl runat="server" LabelText="<%$ Resources:FBAPackWebPages, TypeSecurityQLableText %>">
+			        <Template_Control>--%>
                    <asp:Label ID="lblQuestionMessage" runat="server" Text="" ForeColor="red"></asp:Label>
 			            <SharePoint:InputFormTextBox Title="<%$ Resources:FBAPackWebPages, SecurityQuestionHeaderText %>" class="ms-input" Columns="40" maxlength="255" ID="txtQuestion" Direction="LeftToRight" Runat="server" autocomplete="off" />
 			            <SharePoint:InputFormRequiredFieldValidator ID="InputFormRequiredFieldValidator3" ControlToValidate="txtQuestion" Display="Dynamic" Runat="server"/>
                  </td>
              </tr>
-			       
+			       <%-- </Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+        <!-- Security Answer -->
+        <%--<wssuc:InputFormSection id="AnswerSection" runat="server">
+            <template_inputformcontrols>
+                <asp:Label ID="lblAnswerMessage" runat="server" Text="" ForeColor="red"></asp:Label>
+		        <wssuc:InputFormControl runat="server" LabelText="<%$ Resources:FBAPackWebPages, TypeSecurityALableText %>">
+			        <Template_Control>--%>
           <tr id="AnswerSection" runat="server">
             <td>
                 <asp:Label ID="Label10" runat="server" Text="<%$ Resources:FBAPackWebPages, TypeSecurityQLableText %>"></asp:Label>
@@ -161,14 +252,46 @@
 			            <SharePoint:InputFormRequiredFieldValidator ID="InputFormRequiredFieldValidator4" ControlToValidate="txtAnswer" Display="Dynamic" Runat="server"/>
                   </td>
              </tr>
-			     
+			       <%-- </Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+        <!-- Email Address -->
+     <%--   <wssuc:InputFormSection runat="server" >
+            <template_inputformcontrols>
+                <asp:Label ID="lblEmailMessage" runat="server" Text="" ForeColor="red"></asp:Label>
+		        <wssuc:InputFormControl runat="server" LabelText="<%$ Resources:FBAPackWebPages, TypeEmailAddrLabelText %>">
+			        <Template_Control>
+			        <SharePoint:InputFormTextBox Title="<%$ Resources:FBAPackWebPages, EmailColHeaderText %>" class="ms-input" Columns="40" maxlength="255" ID="txtEmail" Direction="LeftToRight" Runat="server" autocomplete="off" />
+			        <SharePoint:InputFormRegularExpressionValidator ID="InputFormRegExpressionFieldValidator1"  ControlToValidate="txtEmail" Display="Dynamic" runat="server" ValidationExpression=".+\@.+" ErrorMessage="Enter a valid email address."/>
+			        </Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+        <!-- Is Active -->
+       <%-- <wssuc:InputFormSection runat="server" id="ActiveSection" >
+            <template_inputformcontrols>
+		        <wssuc:InputFormControl runat="server">
+			        <Template_Control>--%>
          <tr id="ActiveSection" runat="server">
             <td>
                 <asp:Label ID="Label11" runat="server" Text="Activate User"></asp:Label>
             </td>
             <td>
 				        <asp:CheckBox ID="isActive" Checked="true" ToolTip="<%$ Resources:FBAPackWebPages, ActiveCheckBoxToolTipText %>" Text="<%$ Resources:FBAPackWebPages, ActiveCheckBoxLabelText %>" runat="server"/>
-			       
+			        <%--</Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
+                 </td>
+             </tr>
+        <!-- Groups -->
+    
+        <!-- Roles -->
+       <%-- <<%--wssuc:InputFormSection runat="server" id="RolesSection">
+            <template_inputformcontrols>
+		        <wssuc:InputFormControl runat="server" LabelText="<%$ Resources:FBAPackWebPages, GroupLabelText %>">
+			        <Template_Control>--%>
             <tr id="RolesSection" runat="server">
             <td>
                 <asp:Label ID="Label13" runat="server" Text="<%$ Resources:FBAPackWebPages, GroupLabelText %>"></asp:Label>
@@ -177,13 +300,20 @@
 				        <SharePoint:InputFormCheckBoxList ID="rolesList" CssClass="ms-RadioText" ToolTip="<%$ Resources:FBAPackWebPages, GroupToolTipText %>" runat="server" />
                   </td>
              </tr>
-			        
+			        <%--</Template_Control>
+		        </wssuc:InputFormControl>
+	        </template_inputformcontrols>
+        </wssuc:InputFormSection>--%>
         <!-- Email -->
        <wssuc:InputFormSection runat="server" id="EmailSection" >
             <template_inputformcontrols>
 		        <wssuc:InputFormControl runat="server">
 			        <Template_Control>
-         
+            <%--<tr id="EmailSection" runat="server">
+            <td>
+                <asp:Label ID="Label14" runat="server" Text="Email user"></asp:Label>
+            </td>
+            <td>--%>
 			            <SharePoint:InputFormCheckBox id="emailUser" runat="server" Checked="False" LabelText="<%$ Resources:FBAPackWebPages, SendMailLabelText %>" ToggleChildren="true">
 				            <SharePoint:EncodedLiteral ID="EncodedLiteral3" runat="server" text="<%$Resources:wss,aclver_SubjectLabel%>" EncodeMethod='HtmlEncode'/>
 					        <br>
@@ -198,6 +328,8 @@
 					            <SharePoint:InputFormTextBox Title="<%$Resources:wss,aclver_BodyTitle%>" class="ms-input" ID="txtEmailBody" Runat="server" TextMode="MultiLine" Columns="40" Rows="8" Cols=64 MaxLength=512 />
 					        </Template_Control>
 			            </SharePoint:InputFormCheckBox>
+                <%-- </td>
+             </tr>--%>
 			         </Template_Control>
 			    </wssuc:InputFormControl>   
 		    </template_inputformcontrols>
